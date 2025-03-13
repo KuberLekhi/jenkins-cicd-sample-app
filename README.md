@@ -49,5 +49,4 @@ node app.js
 ## Notes
 - Ensure **port 3000** is open in your EC2 security group.
 - The app uses `pm2` to keep running in the background.
-
----
+- ---
