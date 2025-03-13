@@ -42,7 +42,8 @@ node app.js
 
 ### 5️⃣ Access the App
 - Open in a browser:
-  ```
+
+   ```
   http://<EC2-PUBLIC-IP>:3000
   ```
 
