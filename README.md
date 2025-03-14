@@ -4,6 +4,8 @@ This is a simple Node.js app to demonstrate a CI/CD pipeline using Jenkins.
 
 ## ✅ 1. Set Up Jenkins Pipeline with Webhook
 
+Install Java, Jenkins
+
 Create a Freestyle or Pipeline project in Jenkins.
 
 Connect it to your GitHub repository via webhook.
