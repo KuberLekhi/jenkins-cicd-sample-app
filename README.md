@@ -21,7 +21,7 @@ sudo npm install -g pm2
 Set Workspace Directory
 
 /var/lib/jenkins/workspace/project
-###**Replace project with the name of your Jenkins freestyle project.**
+### **Replace project with the name of your Jenkins freestyle project.**
 
 Change Permissions (One-Time Setup)
 
