@@ -13,7 +13,9 @@ Connect it to your GitHub repository via webhook.
 Run the following commands on your EC2 instance only once:
 
 sudo apt update
+
 sudo apt install -y nodejs npm
+
 sudo npm install -g pm2
 
 ## ✅ 3. Jenkins Pipeline Configuration
