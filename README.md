@@ -1,54 +1,56 @@
-🚀 Jenkins CI/CD Sample App
+Jenkins CI/CD Sample App
 
-This is a simple Node.js app demonstrating a CI/CD pipeline using Jenkins.
-
-📌 Setup Instructions
+This is a simple Node.js app to demonstrate a CI/CD pipeline using Jenkins.
 
 ✅ 1. Set Up Jenkins Pipeline with Webhook
 
-Create a Freestyle/Pipeline project in Jenkins.
+Create a Freestyle or Pipeline project in Jenkins.
 
-Connect it to your GitHub repository via a webhook.
+Connect it to your GitHub repository via webhook.
 
-✅ 2. Install Dependencies on EC2 (One-time Setup)
+✅ 2. Install Dependencies on EC2 (One-Time Setup)
+
+Run the following commands on your EC2 instance only once:
 
 sudo apt update
 sudo apt install -y nodejs npm
 sudo npm install -g pm2
 
-✅ 3. Configure Jenkins Pipeline
+✅ 3. Jenkins Pipeline Configuration
 
-Set Workspace Directory:(Replace project with the name of your Jenkins freestyle project.)
+Set Workspace Directory
+
+(Replace project with the name of your Jenkins freestyle project.)
 
 /var/lib/jenkins/workspace/project
 
-Change permissions (one-time setup):
+Change Permissions (One-Time Setup)
+
+This ensures Jenkins can run scripts properly:
 
 sudo chown -R ubuntu:jenkins /var/lib/jenkins/workspace
 sudo chmod -R 775 /var/lib/jenkins/workspace
 
-This ensures Jenkins can run scripts properly.
+✅ 4. Write Build Steps in Jenkins Pipeline
 
-✅ 4. Define Build Steps in Jenkins Pipeline
-
-Add these commands in the Build Steps of the Jenkins project:
+Add these commands in the Build Steps of your Jenkins Project:
 
 cd /var/lib/jenkins/workspace/A
 npm install
-npm install --only=prod  # Optional: Install only production dependencies
-npm audit fix --force    # Optional: Fix security vulnerabilities
-npm test                 # Optional: Run tests before deployment
-npm run build            # Optional: If your app has a build step
+npm install --only=prod  # Install only production dependencies (optional)
+npm audit fix --force    # Fix security vulnerabilities (optional)
+npm test                 # Run tests before deployment (optional)
+npm run build            # If your app has a build step (optional)
 pm2 restart myapp || pm2 start app.js --name myapp
 pm2 save
 
-✅ 5. Verify the App Restarted Successfully
+✅ 5. Make Sure the App Runs After Restart
 
-Check running processes:
+Check PM2 Process
 
 pm2 list
 
-Check logs for errors:
+Check Logs for Errors
 
 pm2 logs myapp
 
@@ -56,15 +58,17 @@ pm2 logs myapp
 
 Make a change in GitHub, commit & push.
 
-Jenkins should trigger automatically, pull the new code, and restart the app.
+Jenkins should trigger automatically, pull new code, and restart the app.
 
-✅ 7. Access the Application 🌍
+✅ 7. Access the Application
 
-Open the app in a browser:
+Open the app in your browser:
 
 http://<EC2-PUBLIC-IP>:3000
 
+Important:
+
 Ensure port 3000 is open in your EC2 security group.
 
-🎯 This guide ensures your app runs smoothly with Jenkins, PM2, and GitHub webhooks! 🚀
+This guide ensures your app runs smoothly with Jenkins, PM2, and GitHub webhooks! 🚀
 
