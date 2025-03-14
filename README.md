@@ -30,6 +30,7 @@ Change Permissions (One-Time Setup)
 This ensures Jenkins can run scripts properly:
 
 sudo chown -R ubuntu:jenkins /var/lib/jenkins/workspace
+
 sudo chmod -R 775 /var/lib/jenkins/workspace
 
 ## ✅ 4. Write Build Steps in Jenkins Pipeline
