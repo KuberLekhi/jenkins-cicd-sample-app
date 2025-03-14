@@ -64,7 +64,7 @@ Jenkins should trigger automatically, pull new code, and restart the app.
 
 Open the app in your browser:
 
-http://<EC2-PUBLIC-IP>:3000
+http://EC2-PUBLIC-IP:3000
 
 Important:
 
