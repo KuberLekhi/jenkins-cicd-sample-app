@@ -24,6 +24,7 @@ Set Workspace Directory
 
 **Replace project with the name of your Jenkins freestyle project.**
 
+
 Change Permissions (One-Time Setup)
 
 This ensures Jenkins can run scripts properly:
