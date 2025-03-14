@@ -38,12 +38,19 @@ sudo chmod -R 775 /var/lib/jenkins/workspace
 Add these commands in the Build Steps of your Jenkins Project:
 
 cd /var/lib/jenkins/workspace/A
+
 npm install
+
 npm install --only=prod  # Install only production dependencies (optional)
+
 npm audit fix --force    # Fix security vulnerabilities (optional)
+
 npm test                 # Run tests before deployment (optional)
+
 npm run build            # If your app has a build step (optional)
+
 pm2 restart myapp || pm2 start app.js --name myapp
+
 pm2 save
 
 ## ✅ 5. Make Sure the App Runs After Restart
